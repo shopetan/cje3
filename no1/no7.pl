@@ -6,6 +6,8 @@
 $x = -3;
 push(@a,$x);
 $y = pop(@a);
-unshift(@a,$x);
+$test = unshift(@a,$x);
+print "$test\n";
 $y = shift(@a);
+print "$y\n";
 push(@a,@b);
