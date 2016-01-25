@@ -1,0 +1,2 @@
+Several types of queries are widely used on the World Wide Web and the expected retrieval method can vary depending on the query type.
+We propose a method for classifying queries into informational and navigational types.

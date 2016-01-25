@@ -1,0 +1,2 @@
+Because terms in navigational queries often appear in anchor text for links to other pages, we analyze the distribution of query terms in anchor texts on the Web for query classification purposes.
+While content-based retrieval is effective for informational queries, anchor-based retrieval is effective for navigational queries.
