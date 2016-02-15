@@ -2,11 +2,13 @@
 
 my @index = ();
 push @index, <STDIN>;
+
 $isIncludeStopword = 0;
 foreach $index(@index){
     chomp($index);
     foreach $stopword(@stopwords){
-        if($index =~ /$stopword/){
+	@term = split(/ /,$index);
+        if(@term[1] eq $stopword){
             $isIncludeStopword = 1;
         }
     }
@@ -15,5 +17,3 @@ foreach $index(@index){
     }
     $isIncludeStopword = 0;
 }
-
-

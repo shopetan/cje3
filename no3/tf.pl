@@ -24,8 +24,7 @@ foreach $index(@index){
 
     if(exists($tf{@term[0]}{@term[1]})){
 	$tf{@term[0]}{@term[1]}++;
-    }
-    else{
+    }else{
 	$tf{@term[0]}{@term[1]} = 1;
     }
     

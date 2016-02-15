@@ -26,7 +26,6 @@ foreach $index(@index){
 	}
     }
 }
-print "$totalDocumentNum\n";
 foreach $term (sort keys %calcIdf) {
     $isFirstTerm = 0;
     foreach $docid (sort keys %{$calcIdf{$term}}) {
@@ -34,7 +33,6 @@ foreach $term (sort keys %calcIdf) {
 	$idf = log($totalDocumentNum/$num) + 1;
 	if(!$isFirstTerm){
 	    $idf{$term} = $idf;
-	    #print "idf($term) = $idf\n";
 	    $isFirstTerm = 1;
 	}
     }
