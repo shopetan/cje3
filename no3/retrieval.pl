@@ -6,16 +6,16 @@ if(@ARGV != 1){
     print STDERR "Usage: $0 <index file>\n";
     exit;
 }
-foreach $file(@ARGV) {
-    open(IN, $file) || die " Cannnot open $file: $!";
-    while($line = <IN>){
-	chomp($line);
-	@term = split(/ /,$line);
-	if(!exists($tfidf{@term[1]}{@term[0]})){
-	    $tfidf{@term[1]}{@term[0]} = @term[4];
-	}
+
+$file = @ARGV[0];
+open(IN, $file) || die " Cannnot open $file: $!";
+while($line = <IN>){
+    chomp($line);
+    @term = split(/ /,$line);
+    if(!exists($tfidf{@term[1]}{@term[0]})){
+	$tfidf{@term[1]}{@term[0]} = @term[4];
     }
-}    
+}
 
 foreach $index(@index){
     chomp($index);
@@ -27,7 +27,6 @@ foreach $term (sort keys %tfidf) {
     foreach $docid (sort keys %{$tfidf{$term}}) {
 	foreach $query (@querys){
 	    if($term eq $query){
-		#print "$term $docid $tfidf{$term}{$docid} \n";
 		if(!exists($result{$docid})){
 		    $result{$docid} = $tfidf{$term}{$docid};
 		}else{
